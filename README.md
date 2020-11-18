@@ -1,1 +1,1 @@
-# Picorv32-CORE-SOC-using-Open-source-tools
+# Picorv32-SOC-using-Open-source-tools
