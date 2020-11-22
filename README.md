@@ -29,16 +29,46 @@ Result of syntheis is shown in the below snap,which gives info about various des
 
 ![Day1-statistics](https://user-images.githubusercontent.com/74585082/99905772-edea5100-2cf8-11eb-9e63-8de0ddb2a51e.PNG)
 
-Different Open-Source tools Used at different stages in RTL to GDSII flow are below  .
+Open-Source tools Used at different stages in RTL to GDSII flow are below .
 - **Synthesis     : Yosys**
 - **Placement,CTS : Graywolf** 
 - **Routing       : Qrouter**
 - **Timing**      : **Opentimer**
+- **Layout**      : **Magic**
 
 ### Day 2 : Floorplanning Techniques & Introduction to library cells ,Placement.
-**Day 2** comes up with interesting concept floorplan which is important step in PD flow .As this step includes estimation of area (Aspect ratio & Utilization factor) ,
-Pin placement & pre-placed cells placement .A good floorplan makes the implementation easier in further steps ,where as bad floorplan causes viceversa .
+**Day 2** comes up with interesting concept **Floorplan** which is important step in PD flow .As this step includes estimation of area (Aspect ratio & Utilization factor) ,
+Pin placement & pre-placed cells placement, power planning .A good floorplan makes the implementation easier in further steps ,where as bad floorplan causes viceversa .
 So it's important to understand the design requirements in the starting stage & make changes of pin placement & pre-placed cell placement.
+
+![Day_2_pic1](https://user-images.githubusercontent.com/74585082/99907931-97cfda80-2d05-11eb-9900-24a60710c481.PNG)
+
+**Placement**
+In this stage all standard cells are placed in the design ,this is different parameters Timing ,congestion driven ,Power opt based .Timing & Routing congestion is based on placement quality. 
+
+
+#### Library Characterization 
+
+**Library** is a collection different logical cells with different functionality ,different vt types & with different sizes ,according to required specs .
+I/p's for characterization of a library of a cell are PDK's ,DRC &LVS rules ,SPICE Models & User defined specs .Steps followed by i/p's are 
+
+- **Circuit Design** --> To model the cmos logic according to library requirement like W/L ratio ,Drain current requirement .O/p of this is Circuit description language .
+- **Layout Design**  --> By Using Circuit need to implement in terms of layout using **Magic tool**. Layout is doneusing **Eulers path algorithm** & **Stick diagram** .O/p's of this include GDSII, LEF , Extracted Spice netlist .
+- **Characterization** --> We need to use o/p's of circuit & layout design to characterize a logical cell 
+                    - Read SPICE model file from foundry which includes PMOS & NMOS parameters .
+                    - Read the extracted spice netlist .
+                    - To define the behaviour of logical cell .
+                    - Read the subckt of logical cell ,if any .
+                    - Add power sources & apply stimulus .
+                    - Provide o/p load capacitance.
+                    - Perform necessary Dc & tarnsient simulations using SPICE tools ,Which in turn provides info of timing ,noise ,power .libs if a cell .
+bbabcls
+
+               
+
+
+
+
 
 
 
