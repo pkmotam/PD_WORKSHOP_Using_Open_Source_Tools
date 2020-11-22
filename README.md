@@ -54,6 +54,10 @@ I/p's for characterization of a library of a cell are PDK's ,DRC &LVS rules ,SPI
 
 - **Circuit Design** --> To model the cmos logic according to library requirement like W/L ratio ,Drain current requirement .O/p of this is Circuit description language .
 - **Layout Design**  --> By Using Circuit need to implement in terms of layout using **Magic tool**. Layout is doneusing **Eulers path algorithm** & **Stick diagram** .O/p's of this include GDSII, LEF , Extracted Spice netlist .
+
+![day_2_layout](https://user-images.githubusercontent.com/74585082/99913836-e0948d00-2d1f-11eb-8275-54eaf6fc02f3.PNG)
+
+
 - **Characterization** --> We need to use o/p's of circuit & layout design to characterize a logical cell 
                     - Read SPICE model file from foundry which includes PMOS & NMOS parameters .
                     - Read the extracted spice netlist .
@@ -62,7 +66,6 @@ I/p's for characterization of a library of a cell are PDK's ,DRC &LVS rules ,SPI
                     - Add power sources & apply stimulus .
                     - Provide o/p load capacitance.
                     - Perform necessary Dc & tarnsient simulations using SPICE tools ,Which in turn provides info of timing ,noise ,power .libs if a cell .
-bbabcls
 
                
 
