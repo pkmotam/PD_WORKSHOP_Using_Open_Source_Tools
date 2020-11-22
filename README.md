@@ -67,9 +67,7 @@ I/p's for characterization of a library of a cell are PDK's ,DRC &LVS rules ,SPI
                     - Provide o/p load capacitance.
                     - Perform necessary Dc & tarnsient simulations using SPICE tools ,Which in turn provides info of timing ,noise ,power .libs if a cell .
 
-               
-
-
+### Day 3: Design & Characterization of a library cell using Magic tool & Ngspice simulations .
 
 
 
