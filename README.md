@@ -15,4 +15,6 @@ CTS ,Routing ,STA, DRC .
 - **Day 5**: Routing & SPEF file format 
 
 ### Day 1 : Introduction to IC terminologies & Open source tools & **RISCV** based ***PicoSOC***.
+Day1 starts with introduction to IC terminologies Package,Core,Die,Ip's & RISCV arch .
+How an software  application linked with Vlsi , concept of compiler & assembler .
 
