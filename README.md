@@ -93,7 +93,9 @@ Parameters that define the robustness of cmos invereter are ***Switching thresho
 - Fall Delay : Time during the transition when o/p swithces from 80% to 20% of max value .
 - Propagation Delay : Diff in time at 50% of i/p to o/p transistion ,when o/p swicthes after appliation of i/p .
 
-**Art of drawing Layout** ,this includes introduction on how to draw layout & rules in drawing layout which varies based process you are design, Euler's method of drawing layout which reduces routing , inturn reduces parasitics impact ,also there is an comparision drawn b/w the layout drawn with & with out Euler's method to understand how this approach makes layout robust .Tool used for drawing layout is **Magic Tool** . Once the Layout is ready we extract parasitics & spice netlist to compare the **pre-layout** & **post -layout simulations** . There will be slight delay chnages due to addition of parasitics post -layout ,but the waveform remains same .
+**Art of drawing Layout** ,this includes introduction on how to draw layout & rules in drawing layout which varies based process you are design, Euler's method of drawing layout which reduces routing , inturn reduces parasitics impact ,also there is an comparision drawn b/w the layout drawn with & with out Euler's method to understand how this approach makes layout robust .Tool used for drawing layout is **Magic Tool** . Once the Layout is ready we extract parasitics & spice netlist to compare the **pre-layout** & **post -layout transient simulations using SPICE tool (ngspice) ** . There will be slight delay chnages due to addition of parasitics post -layout ,but the waveform remains same .
+
+![Day_3_layout](https://user-images.githubusercontent.com/74585082/99935377-91ce0e00-2d86-11eb-8525-e7b4ff8e94b2.PNG)
 
 ![Day_3_tran_pre_layout spice](https://user-images.githubusercontent.com/74585082/99932001-aad1c180-2d7c-11eb-9a01-0d825ec14f34.PNG)
 
