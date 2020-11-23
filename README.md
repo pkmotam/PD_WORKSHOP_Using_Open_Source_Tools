@@ -76,7 +76,7 @@ ____
 
 On Day-3 talk is on SPICE deck creation , simulations & Layout creation of CMOS inverter .
 
- **Spice deck** creation involves in
+ **Spice deck** creation involves in below steps .After this we perform DC & transient simulations to meet user specs .
 - Component connectivity.
 - I/p's & Tap points.
 - Component values .
@@ -85,7 +85,17 @@ On Day-3 talk is on SPICE deck creation , simulations & Layout creation of CMOS 
 
 ![Day_3_spice_deck](https://user-images.githubusercontent.com/74585082/99931989-a4dbe080-2d7c-11eb-855c-8b3d71a05f88.PNG)
 
+![Day_3_dc_simulation](https://user-images.githubusercontent.com/74585082/99932006-af967580-2d7c-11eb-903e-171c000da7df.PNG)
 
+Parameters that define the robustness of cmos invereter are ***Switching threshold (Vm)*** .It is defined as point where *vin =vout* . By using waveforms how W/L ratio impacts rise delay & fall delay of an inverter .
+
+- Rise Delay : Time during the transition when o/p swithces from 20% to 80% of max value .
+- Fall Delay : Time during the transition when o/p swithces from 80% to 20% of max value .
+- Propagation Delay : Diff in time at 50% of i/p to o/p transistion ,when o/p swicthes after appliation of i/p .
+
+**Art of drawing Layout** ,this includes introduction on how to draw layout & rules in drawing layout which varies based process you are design, Euler's method of drawing layout which reduces routing , inturn reduces parasitics impact ,also there is an comparision drawn b/w the layout drawn with & with out Euler's method to understand how this approach makes layout robust .Tool used for drawing layout is **Magic Tool** . Once the Layout is ready we extract parasitics & spice netlist to compare the **pre-layout** & **post -layout simulations** . There will be slight delay chnages due to addition of parasitics post -layout ,but the waveform remains same .
+
+![Day_3_tran_pre_layout spice](https://user-images.githubusercontent.com/74585082/99932001-aad1c180-2d7c-11eb-9a01-0d825ec14f34.PNG)
 
 
 
