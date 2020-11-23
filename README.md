@@ -15,6 +15,8 @@ CTS ,Routing ,STA, DRC .
 - **Day 5**: Routing & SPEF file format 
 
 ### Day 1 : Introduction to IC terminologies & Open source tools & **RISCV** based ***PicoSOC***.
+____
+
 **Day1** starts with introduction to IC terminologies Package,Core,Die,Ip's & RISCV arch .
 How an software  application linked with Vlsi , concept of compiler & assembler ,overview of Picorv32 SOC.
 
@@ -37,8 +39,10 @@ Open-Source tools Used at different stages in RTL to GDSII flow are below .
 - **Layout**      : **Magic**
 
 ### Day 2 : Floorplanning Techniques & Introduction to library cells ,Placement.
+____
+
 **Day 2** comes up with interesting concept **Floorplan** which is important step in PD flow .As this step includes estimation of area (Aspect ratio & Utilization factor) ,
-Pin placement & pre-placed cells placement, power planning .A good floorplan makes the implementation easier in further steps ,where as bad floorplan causes viceversa .
+Pin placement & pre-placed cells placement, power planning .A good floorplan makes the implementation easier in further steps ,where as bad floorplan causes vice-versa .
 So it's important to understand the design requirements in the starting stage & make changes of pin placement & pre-placed cell placement.
 
 ![Day_2_pic1](https://user-images.githubusercontent.com/74585082/99907931-97cfda80-2d05-11eb-9900-24a60710c481.PNG)
@@ -58,16 +62,29 @@ I/p's for characterization of a library of a cell are PDK's ,DRC &LVS rules ,SPI
 ![day_2_layout](https://user-images.githubusercontent.com/74585082/99913836-e0948d00-2d1f-11eb-8275-54eaf6fc02f3.PNG)
 
 
-- **Characterization** --> We need to use o/p's of circuit & layout design to characterize a logical cell 
-                    - Read SPICE model file from foundry which includes PMOS & NMOS parameters .
-                    - Read the extracted spice netlist .
-                    - To define the behaviour of logical cell .
-                    - Read the subckt of logical cell ,if any .
-                    - Add power sources & apply stimulus .
-                    - Provide o/p load capacitance.
-                    - Perform necessary Dc & tarnsient simulations using SPICE tools ,Which in turn provides info of timing ,noise ,power .libs if a cell .
+**Characterization** --> We need to use o/p's of circuit & layout design to characterize a logical cell 
+ - Read SPICE model file from foundry which includes PMOS & NMOS parameters .
+ - Read the extracted spice netlist .
+ - To define the behaviour of logical cell .
+ - Read the subckt of logical cell ,if any .
+ - Add power sources & apply stimulus .
+ - Provide o/p load capacitance.
+ - Perform necessary DC & transient simulations using SPICE tools ,Which in turn provides info of timing ,noise ,power .libs of a cell .
 
 ### Day 3: Design & Characterization of a library cell using Magic tool & Ngspice simulations .
+____
+
+On Day-3 talk is on SPICE deck creation , simulations & Layout creation of CMOS inverter .
+
+ **Spice deck** creation involves in
+- Component connectivity.
+- I/p's & Tap points.
+- Component values .
+- O/p Load Capacitance.
+- Supply volatge & I/p gate voltage .
+
+![Day_3_spice_deck](https://user-images.githubusercontent.com/74585082/99931989-a4dbe080-2d7c-11eb-855c-8b3d71a05f88.PNG)
+
 
 
 
