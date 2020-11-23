@@ -12,7 +12,7 @@ CTS ,Routing ,STA, DRC .
 - **Day 2**: Floorplanning Techniques & Introduction to library cells ,Placement .
 - **Day 3**: Design & Characterization of a library cell using **Magic** tool & **Ngspice** simulations .
 - **Day 4**: Timing models ,CTS & Signal Integrity 
-- **Day 5**: Routing & SPEF file format 
+- **Day 5**: Routing & DRC, SPEF file format Introduction 
 
 ### Day 1 : Introduction to IC terminologies & Open source tools & **RISCV** based ***PicoSOC***.
 ____
@@ -132,6 +132,60 @@ Clock tree synthesis is important step in builiding a clock to all clock pins in
 As technology shrinks the impact of coupling capcitance increases ,which inturn may impact the nearby nets by changing the functionality of victim net .To avoid this we use technique called sheilding .
 
 ![Day_4_cts](https://user-images.githubusercontent.com/74585082/99940874-0e66e980-2d93-11eb-880f-6281fdd33bfa.PNG)
+
+We have created a clock as below & stored it in a SDC file & propogated it to verify setup & hold time of design .Below commands are related to **opentimer** used to read the inputs required for timing analysis .
+
+* create_clock -name clk -period 2.5 -waveform {0 1.25} [get_ports clk]
+* read_liberty /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib 
+* read_verilog synthesis/picorv32.rtlnopwr.v
+* link_design picorv32
+* read_sdc picorv32.sdc
+* report_checks
+
+### Day 5: Routing & DRC , SPEF File format Introduction 
+____
+
+Final day, is about Routing & introduction of SPEF file format .
+
+*Routing* is nothing but interconnection between standard cells & Macros based on the logical connections present in the netlist .This is done by algorithm named **LEE's algorithm** ,which creates routing grid & two points one is source ,other one is target .So the algorithm  does it by creating labels the adjacent grids &follow the same procedure until it meets the target .Once it reaches it find's out best possible way to reach to target by following DRC rules given by foundry .
+
+![day_5_Routing](https://user-images.githubusercontent.com/74585082/99953223-0022c880-2da7-11eb-915f-0dd16ca5bee8.PNG)
+
+![Day_5_routing_1](https://user-images.githubusercontent.com/74585082/99953301-17fa4c80-2da7-11eb-8ae3-f27844e7726e.PNG)
+
+Once routing is done we have compared pre-layout & Post layout frequency ,by the below snaps ,we can observe there is a change in frequency due to parasitics impact .
+
+![Day_5_pre_sta](https://user-images.githubusercontent.com/74585082/99995960-1b122e80-2de1-11eb-8552-eb7c390d9c3f.PNG)
+
+
+
+#### DRC 
+Design rule checks, once routing is done we need to determine whether the it is following the rules given by foundry to make the chip manufacturable ,Some of them includes
+- Metal to metal spacing
+- Metal width (Min,Max)
+- Min Enclosure
+- Poly to Poly Spacing
+- Contact to Poly etc ...
+
+#### SPEF
+**STANDARD PARASITIC EXTRACTION FORMAT** is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. These wires also have inductance that is not included in SPEF.
+
+SPEF file consists 4 sections 
+- Header Section 
+- Name Map Section 
+- Top level port section 
+- Parasitic description section 
+
+* Header section consists of Design Name ,Parasitic extraction tool, Naming Styles, Units .
+* SPEF allows to map long names to some numbers ,to reduce file size .
+* PORT section contains all top level ports in design ,it might be an I/p ,O/p or bi-directional .
+* Each extracted net will have a \*D_NET Section ,\*CONN, \*RES, \*CAP sections .
+
+
+
+
+
+
 
 
 
