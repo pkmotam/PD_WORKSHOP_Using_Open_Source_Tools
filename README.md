@@ -1,4 +1,4 @@
-# Picorv32-SOC Design -using-Open-source-tools
+# Picorv32-SOC Design using Open source tools
 
 WorkShop is focused on understanding the concepts involved in SOC design, 
 from RTL to GDSII using Open Source tools based on 180nm PDK .
@@ -157,6 +157,7 @@ Once routing is done we have compared pre-layout & Post layout frequency ,by the
 
 ![Day_5_pre_sta](https://user-images.githubusercontent.com/74585082/99995960-1b122e80-2de1-11eb-8552-eb7c390d9c3f.PNG)
 
+![Day_5Post_layout_sta](https://user-images.githubusercontent.com/74585082/99995959-1b122e80-2de1-11eb-91b6-bf51545954d9.PNG)
 
 
 #### DRC 
@@ -180,6 +181,11 @@ SPEF file consists 4 sections
 * SPEF allows to map long names to some numbers ,to reduce file size .
 * PORT section contains all top level ports in design ,it might be an I/p ,O/p or bi-directional .
 * Each extracted net will have a \*D_NET Section ,\*CONN, \*RES, \*CAP sections .
+
+# Acknowledgements:
+
+**Kunal Ghosh**, Co-founder (VSD Corp. Pvt. Ltd)
+
 
 
 
