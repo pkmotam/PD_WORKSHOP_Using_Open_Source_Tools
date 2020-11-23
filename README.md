@@ -93,11 +93,46 @@ Parameters that define the robustness of cmos invereter are ***Switching thresho
 - Fall Delay : Time during the transition when o/p swithces from 80% to 20% of max value .
 - Propagation Delay : Diff in time at 50% of i/p to o/p transistion ,when o/p swicthes after appliation of i/p .
 
-**Art of drawing Layout** ,this includes introduction on how to draw layout & rules in drawing layout which varies based process you are design, Euler's method of drawing layout which reduces routing , inturn reduces parasitics impact ,also there is an comparision drawn b/w the layout drawn with & with out Euler's method to understand how this approach makes layout robust .Tool used for drawing layout is **Magic Tool** . Once the Layout is ready we extract parasitics & spice netlist to compare the **pre-layout** & **post -layout transient simulations using SPICE tool (ngspice) ** . There will be slight delay chnages due to addition of parasitics post -layout ,but the waveform remains same .
+**Art of drawing Layout** ,this includes introduction on how to draw layout & rules in drawing layout which varies based process you are design, Euler's method of drawing layout which reduces routing , inturn reduces parasitics impact ,also there is an comparision drawn b/w the layout drawn with & with out Euler's method to understand how this approach makes layout robust .Tool used for drawing layout is **Magic Tool** . Once the Layout is ready we extract parasitics & spice netlist to compare the **pre-layout** & **post -layout** transient simulations using SPICE tool (ngspice) . There will be slight delay chnages due to addition of parasitics post -layout ,but the waveform remains same .
 
 ![Day_3_layout](https://user-images.githubusercontent.com/74585082/99935377-91ce0e00-2d86-11eb-8525-e7b4ff8e94b2.PNG)
 
 ![Day_3_tran_pre_layout spice](https://user-images.githubusercontent.com/74585082/99932001-aad1c180-2d7c-11eb-9a01-0d825ec14f34.PNG)
+
+#### CMOS 16 mask Fabrication process 
+
+A 16 Mask Cmos Fabrication process is explained in detail from scratch includes various concepts like Diffusion ,Ion implanatation ,Etching , Deposition ,Chemical mechanical polishing .Following are the major steps involved 
+- Create Active regions .
+- Formation of Nwell & Pwell regions .
+- Formation of gate terminal .
+- Lightly doped drain formation .
+- Source -Drain formation .
+- Local interconnect fromation .
+- High -level metal formation .
+
+### Day 4 : Timing models ,CTS & Signal Integrity
+____
+
+On Day-4 workshop is on delay tables & how delay tables are characterized . Cell delay is captured based on I/p slew & o/p load . In Library there will be look up tables defined for each cell related delays for different combinations of I/p slew's & O/p load values . Intorduction timing analysis based on ideal & real clocks ,CTS buliding , & discussed various terms timing related terminologies Skew ,latency , Setup time & Hold time , Uncertainity .
+- Setup time : It is the minimum amount of time required for the data to reach the capture flop ,beofre the active edge of clock reaches it .
+- Hold time  : it is the minimum amount of time the data should be stable after clock edge reaches the flop .
+- Skew       : It is arrival of clock at two consecutive clock pins of a sequential elements (Flops) .
+- Clock Uncertainity : It is deviation in the arrival of clock edge w.r.t ideal arrrival ,due to Jitter & noise .
+
+**Timing analysis with ideal & real clocks**
+
+Setup & hold timing analysis with ideal & real clocks differ with some parameters like uncertainity ,network latency (clock n/w delay) as parasitics comes into picture .
+
+![Day_4_Setup](https://user-images.githubusercontent.com/74585082/99940251-ca271980-2d91-11eb-9490-f6f5c302d026.PNG)
+
+**CTS:**
+Clock tree synthesis is important step in builiding a clock to all clock pins in the design ,it involves in adding buffers & inverters to minimize the skew & load for better timing QOR & to meet setup & hold requirements using H-tree algorithm .
+
+**Signal Integrity:**
+As technology shrinks the impact of coupling capcitance increases ,which inturn may impact the nearby nets by changing the functionality of victim net .To avoid this we use technique called sheilding .
+
+![Day_4_cts](https://user-images.githubusercontent.com/74585082/99940874-0e66e980-2d93-11eb-880f-6281fdd33bfa.PNG)
+
 
 
 
